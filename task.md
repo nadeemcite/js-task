@@ -1,3 +1,7 @@
+## Rules
+
+1. You are not allowed to create a new file. All tasks should be created in the specified files.
+
 ### Task 1
 
 Complete js function sum in [init.js](init.js) file.
