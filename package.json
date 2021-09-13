@@ -1,0 +1,23 @@
+{
+  "name": "js-task",
+  "version": "1.0.0",
+  "description": "## Prerequisite",
+  "main": "init.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nadeemcite/js-task.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nadeemcite/js-task/issues"
+  },
+  "homepage": "https://github.com/nadeemcite/js-task#readme",
+  "devDependencies": {
+    "jest": "^27.1.1"
+  }
+}
