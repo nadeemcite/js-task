@@ -1,5 +1,5 @@
 module.exports = {
-    sum() {
-    }
-  };
-  
+  sum(a, b) {
+    
+  }
+};

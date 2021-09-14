@@ -33,6 +33,86 @@ Sample output for ci(3000, 5, 10)
 Make sure if optional arguments are not given rate_per_annum will be considered as 6.5.
 And if time_in_months is not provided it has to be considered as 10.
 
+Make sure rate_per_annum can be ommited only if time_in_months is ommitted.
+
+### Task 3
+
+Create a function "zipMeAll" should zip two arrays.
+
+Sample input 
+```zipMeAll([1,2],[3,4])```
+Should return
+```[[1,3],[2,4]]```
+
+Please throw error if size of arrays differ.
+
+### Task 4 sort an array of objects
+
+Create a function "sortObjects" to sort an array of objects. 
+This function takes 2 arguments, first argument as array of objects and second argument as key in string.
+For this task you need to take only one level of keys.
+
+Sample Input
+```
+    sortObjects([
+        {a:1,b:2,c:3},
+        {a:4,b:2,c:1},
+        {a:3,b:7,c:9},
+    ], 'a')
+```
+
+Should return
+```
+[
+    {a:1,b:2,c:3},
+    {a:3,b:7,c:9},
+    {a:4,b:2,c:1}   
+]
+```
 
 
+### Task 5 intelligent Function for array of objects
 
+Create a function "intelligentArray"
+
+It accepts 3 arguments. 
+1. First argument is array of objects
+2. Second argument operation. i.e. sum, avg, product
+3. Third argument key to perform that operation
+
+Sample Input 1
+```
+    intelligentArray([
+        {a:1,b:2,c:3},
+        {a:4,b:2,c:1},
+        {a:3,b:7,c:9},
+    ], 'sum','a')
+```
+Output
+```
+    8
+```
+Sample Input 2
+```
+    intelligentArray([
+        {a:1,b:2,c:3},
+        {a:4,b:2,c:1},
+        {a:3,b:7,c:9},
+    ], 'avg','b')
+```
+Output
+```
+    3.6666666666666665
+```
+Sample Input 3
+```
+    intelligentArray([
+        {a:1,b:2,c:3},
+        {a:4,b:2,c:1},
+        {a:3,b:7,c:9},
+    ], 'product','c')
+```
+Output
+```
+    27
+```
