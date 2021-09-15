@@ -42,7 +42,7 @@ Submit your task by following commands
 ```
 git add .
 git commit -m "your_custom_messages"
-
+git push origin <branch_name_given_in_step_3>
 ```
 *you can submit as many times you want*
 
