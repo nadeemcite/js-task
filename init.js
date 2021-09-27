@@ -1,14 +1,12 @@
 module.exports = {
   //TASK 1
-  sum(a, b) {
-    if (typeof a === 'string' || typeof b === 'string') {
-      throw new Error('one of the input is of type String');
-    } else {
-      console.log("adding the values of a,b", a + b);
-      return a + b;
-    }
-  },
+  sum(num1,num2) {
+    if (typeof num1 != 'number' || typeof num2 != 'number')
+      throw Error("Illegal Arguments")
 
+    else return num1 + num2
+  },
+ 
   //TASK 2
   ci(principle, rate_per_annum, time_in_months) {
 
@@ -16,10 +14,10 @@ module.exports = {
       throw new Error('principle amount is not provided')
     }
     // Make sure rate_per_annum can be ommited only if time_in_months is ommitted.
-    if(time_in_months && !rate_per_annum){
+    if (time_in_months && !rate_per_annum) {
       throw new Error('Rate per annum can not be ommitted if time in months is provided')
     }
-    let rate  = rate_per_annum ? rate_per_annum : 6.5
+    let rate = rate_per_annum ? rate_per_annum : 6.5
     let months = time_in_months ? time_in_months : 10
     let totalAmount = principle * Math.pow((1 + rate / 100), months)
     let interest = totalAmount - principle;
@@ -81,57 +79,76 @@ module.exports = {
 }
 
 //Task-1 test case 
-try {
-  //Case-1
-  let sum1 = module.exports.sum(1, 4);
-  console.log("Sum is", sum1);
-  //Case-2
-  let sum2 = module.exports.sum(1, 'a');
+console.log("*********************TASK 1***********************");
+try{
+  //case-1
+  let sum1 = module.exports.sum(1,2);
+  console.log("Adding a numbers", sum1);
+  //case-2
+  let sum2 = module.exports.sum(1,"");
+  console.log("Adding a number with a string", sum2);
 }
-catch (err) {
-  console.log(`Error calculating sum - ${err.message}`)
+catch(err){
+  console.log(err.message)
 }
+
 
 //Task-2 test case
+console.log("*********************TASK 2***********************");
 let ci = module.exports.ci(3000, 5, 10);
-console.log("getting result", ci);
+console.log("compound interest results", ci);
 
 //Task 3 test case
-let zipMeAll = module.exports.zipMeAll([1, 2], [3, 4]);
-console.log("getting result", zipMeAll);
+console.log("*********************TASK 3***********************");
+try {
+  let zipMeAll = module.exports.zipMeAll([1, 2], [3, 4]);
+  console.log("zipMeAll Results", zipMeAll);
+  let zipMeAllInvalid = module.exports.zipMeAll([1, 2], [3, 4, 5]);
+}
+catch (err) {
+  console.log(err.message);
+}
 
 //Task 4 test case
+console.log("*********************TASK 4***********************");
 let sortObjects = module.exports.sortObjects([
   { a: 1, b: 2, c: 3 },
   { a: 4, b: 2, c: 1 },
   { a: 3, b: 7, c: 9 },
 ], 'a');
-console.log("getting result", sortObjects);
+console.log("sortObjects result", sortObjects);
 
-let intelligentArrayResult =  module.exports.intelligentArray([
-  {a:1,b:2,c:3},
-  {a:4,b:2,c:1},
-  {a:3,b:7,c:9},
-], 'sum','a')
-console.log("results",intelligentArrayResult)
+//Task 5 test case
+console.log("*********************TASK 5***********************");
+let intelligentArrayResult = module.exports.intelligentArray([
+  { a: 1, b: 2, c: 3 },
+  { a: 4, b: 2, c: 1 },
+  { a: 3, b: 7, c: 9 },
+], 'sum', 'a')
+console.log("intelligentArrayResult for sum operation", intelligentArrayResult)
 
-let intelligentArrayResult2 =  module.exports.intelligentArray([
-  {a:1,b:2,c:3},
-  {a:4,b:2,c:1},
-  {a:3,b:7,c:9},
-], 'avg','b')
-console.log("results",intelligentArrayResult2)
+let intelligentArrayResult2 = module.exports.intelligentArray([
+  { a: 1, b: 2, c: 3 },
+  { a: 4, b: 2, c: 1 },
+  { a: 3, b: 7, c: 9 },
+], 'avg', 'b')
+console.log("intelligentArrayResult for avg", intelligentArrayResult2)
 
-let intelligentArrayResult3 =  module.exports.intelligentArray([
-  {a:1,b:2,c:3},
-  {a:4,b:2,c:1},
-  {a:3,b:7,c:9},
-], 'product','c')
-console.log("results",intelligentArrayResult3)
+let intelligentArrayResult3 = module.exports.intelligentArray([
+  { a: 1, b: 2, c: 3 },
+  { a: 4, b: 2, c: 1 },
+  { a: 3, b: 7, c: 9 },
+], 'product', 'c')
+console.log("intelligentArrayResult for product", intelligentArrayResult3)
 
-let intelligentArrayResult4 =  module.exports.intelligentArray([
-  {a:1,b:2,c:3},
-  {a:4,b:2,c:1},
-  {a:3,b:7,c:9},
-], 'invalid','c')
-console.log("results",intelligentArrayResult4)
+try {
+  let intelligentArrayResult4 = module.exports.intelligentArray([
+    { a: 1, b: 2, c: 3 },
+    { a: 4, b: 2, c: 1 },
+    { a: 3, b: 7, c: 9 },
+  ], 'invalid', 'c')
+  console.log("results", intelligentArrayResult4)
+}
+catch (err) {
+  console.log(err.message)
+}
