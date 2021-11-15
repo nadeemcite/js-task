@@ -9,7 +9,7 @@ module.exports = {
   ci(P, R = 6.5, t = 10) {
     var amount = P * Math.pow(1 + R / 100 / 12, t);
     var interest = amount - P;
-    return { interest: interest, amount: amount };
+    return { p, r, t };
   },
   zipMeAll(a, b) {
     if (a.length != b.length) {
