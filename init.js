@@ -20,6 +20,7 @@ module.exports = {
     });
     return c;
   },
+  
   sortObjects(myArray, key) {
     var result = myArray.sort((a, b) => a[key] - b[key]);
     return result;
